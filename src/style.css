@@ -104,7 +104,7 @@ button:active:hover {
   flex-direction: column;
 }
 
-.button {
+/* .button {
   display: flex;
   justify-content: flex-end;
 }
@@ -116,7 +116,7 @@ button {
   width: fit-content;
   height: 32px;
   font-size: 22px;
-}
+} */
 
 input {
   font-family: 'Patrick Hand', cursive;
