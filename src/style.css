@@ -8,18 +8,13 @@
 body {
   background-color: rgb(23, 21, 21);
   font-family: 'Fuzzy Bubbles', cursive;
-  font-weight: 400;
   color: white;
-}
 
-/* .nav {
-    display: flex;
-    gap: 20%;
-} */
+}
 
 ul {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
 }
 
@@ -91,4 +86,70 @@ button:active:hover {
   transform: scale(0.98);
   background-color: pink;
   color: rgb(7, 175, 212);
+}
+
+footer {
+    background-color:  rgb(23, 21, 21);;
+}
+
+.main-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(22, 21, 21);
+  }
+
+.cards { 
+    display: flex;
+    justify-content: center;
+    /* gap: 1%; */
+    text-align: center;
+}
+
+.none {
+    list-style: none;
+}
+
+.card {
+    margin-top: 5%;
+    width: 25%;
+    background-color: rgba(51, 70, 61, 0.574);
+    padding-bottom: 10%;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.card:hover {
+    border: 4px solid rgb(7, 96, 80);
+}
+
+.card-title {
+  color: rgb(22, 142, 142);
+  font-size: 2rem;
+  padding-top: 5%;
+  /* padding-bottom: 5%; */
+}
+
+.card-img-top {
+    margin-top: 5%;
+    width: 100%;
+    height: 50%;
+
+}
+
+.card-text {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    margin-bottom: 10%;
+}
+
+.btn-comment {
+ margin-right: 55px;
+ margin-top: 5%;
+}
+
+.btn-like {
+    margin-right: 50px;
 }
