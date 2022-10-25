@@ -92,3 +92,38 @@ button:active:hover {
   background-color: pink;
   color: rgb(7, 175, 212);
 }
+
+.form {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.formcontent {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  font-family: 'Patrick Hand', cursive;
+  width: fit-content;
+  height: 32px;
+  font-size: 22px;
+}
+
+input {
+  font-family: 'Patrick Hand', cursive;
+  margin-bottom: 15px;
+  height: 35px;
+  border-radius: 5px;
+  border-width: 2px;
+  padding-left: 10px;
+  font-size: 20px;
+}
