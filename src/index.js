@@ -1,11 +1,15 @@
 import './style.css';
 
-const API = 'https://api.tvmaze.com/shows/1/episodes';
+
+// const API = 'https://api.tvmaze.com/shows/1/episodes';
+// const likesAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OpXkQhwbfD4wnLSWy6wV/likes';
 
 const displayEpisode = document.querySelector('.episode');
 const previous = document.querySelector('.previous');
 const next = document.querySelector('.next');
 const pageNum = document.querySelector('.page-numbers');
+
+let showArray = [];
 
 const getData = async (API) => {
   const result = await fetch(API);
@@ -21,47 +25,83 @@ function displayCards(episode) {
              <div class="card-body">       
                 <p class="card-text">${episode.summary}</p>
                 <button type="button" class="btn btn-link btn-comment">Comments</i></button>
-                <button type="button" class="btn btn-link btn-like"><i class="fa-solid fa-heart"></i></button>
+                <div class="like">
+                <button type="button" onclick="count()"
+                 class="btn btn-link btn-like"><i class="fa-solid fa-heart"></i></button>
+                <span class="likeCount">0</span>
+                </div>
                 </div>`;
 
-  return div;
+                const likesNumber = div.querySelector('.likeCount');
+                if ('like' in episode) {
+                  likesNumber.innerHTML = episode.like;
+  }
+     return div;
 }
 
 const displayShows = (shows, pageNumber) => {
-  shows.splice(pageNumber * 10 - 10, 9).forEach((show) => {
+  shows.slice(pageNumber * 10 - 10, 9).forEach((show) => {
     const div = displayCards(show);
     displayEpisode.append(div);
   });
 };
 
-function loadNext(pageNumber) {
+function loadNext(pageNumber, shows) {
+    const nextPage = pageNumber + 1;
   if (pageNumber + 1 < 6) {
-    pageNum.innerHTML = pageNumber + 1;
+    pageNum.innerHTML = nextPage;
     displayEpisode.innerHTML = '';
-    getData(API)
-      .then((response) => response.json())
-      .then((json) => displayShows(json, pageNumber + 1));
+    displayShows(shows, nextPage);
   }
 }
 
-function loadPrevious(pageNumber) {
-  if (pageNumber - 1 > 0) {
-    pageNum.innerHTML = pageNumber - 1;
+function loadPrevious(pageNumber, shows) {
+    const previousPage = pageNumber - 1;
+  if (pageNumber > 0) {
+    pageNum.innerHTML = previous;
     displayEpisode.innerHTML = '';
-    getData(API)
-      .then((response) => response.json())
-      .then((json) => displayShows(json, pageNumber - 1));
+    displayShows(shows, previousPage);
   }
 }
 
 previous.addEventListener('click', () => {
-  loadPrevious(parseInt(pageNum.innerHTML, 10));
+  loadPrevious(parseInt(pageNum.innerHTML, 10), showArray);
 });
 
 next.addEventListener('click', () => {
-  loadNext(parseInt(pageNum.innerHTML, 10));
+  loadNext(parseInt(pageNum.innerHTML, 10), showArray);
 });
 
-getData(API)
-  .then((response) => response.json())
-  .then((json) => displayShows(json, 1));
+
+
+  getData(API)
+  .then((response1) => response1.json())
+  .then((shows) => {
+    showArray = shows;
+    getData(likesAPI)
+      .then((response2) => response2.json())
+      .then((like) => {
+        console.log(like)
+        like.forEach((item, i) => {
+          showArray[i].like = item.like;
+        });
+        displayShows(showArray, 1);
+      });
+  });
+
+
+//   const createApp = async () => {
+//     const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {
+//       method: 'POST',
+//       body: JSON.stringify({
+//         name: 'My App',
+//       }),
+//       headers: {
+//         'Content-type': 'application/json; charset=UTF-8',
+//       },
+//     });
+//     const data = await response.text();
+//     console.log(data);
+//  };
+
+// //  createApp()
