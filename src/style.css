@@ -42,7 +42,7 @@ h2 {
 }
 
 .container {
-  background-image: url(./assets/MV5BNzM1ODI4Y2UtMGYxMS00OTUxLWE4NzItNjgxMTM2NzRjZThkXkEyXkFqcGdeQXVyMTA1OTcyNDQ4._V1_.jpg);
+  background-image: url(./assets/under-the-dom.jpg);
 
   /* background-color: rgb(250, 240, 240); */
   background-blend-mode: overlay;
@@ -53,25 +53,25 @@ h2 {
   align-items: flex-start;
   height: 100vh;
   gap: 20px;
+  padding-bottom: 10%;
 }
 
 .mini {
   margin-top: 15%;
-  padding-left: 5%;
-  margin-right: 30%;
+  padding-left: 60%;
 }
 
 h1 {
-  padding-top: 20%;
+  padding-top: 40%;
   font-size: 3rem;
-  color: #fff;
+  color: rgb(8, 17, 27);
   margin-top: 0;
   font-weight: 800;
 }
 
 h3 {
   margin-top: 5%;
-  color: rgb(233, 228, 235);
+  color:rgb(8, 17, 27);
   padding-right: 20%;
   font-size: 1.5rem;
 }
