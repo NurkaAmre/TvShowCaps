@@ -1,6 +1,5 @@
 import './style.css';
 
-
 const API = 'https://api.tvmaze.com/shows/1/episodes';
 const likesAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OpXkQhwbfD4wnLSWy6wV/likes';
 
@@ -8,7 +7,7 @@ const displayEpisode = document.querySelector('.episode');
 const previous = document.querySelector('.previous');
 const next = document.querySelector('.next');
 const pageNum = document.querySelector('.page-numbers');
-const body = document.querySelector('body');
+// const body = document.querySelector('body');
 
 let showsArray = [];
 
@@ -33,7 +32,6 @@ const likeShow = async (id, likesNumber, likesBtn) => {
     i.classList.add('fa-solid');
   });
 };
-
 
 function createShowCard(episode) {
   const div = document.createElement('div');
@@ -61,7 +59,6 @@ function createShowCard(episode) {
     likeShow(episode.id, likesNumber, likeBtn);
   });
 
-
   return div;
 }
 
@@ -74,7 +71,7 @@ const displayShows = (shows, pageNumber) => {
 
 function loadNext(pageNumber, shows) {
   const nextPage = pageNumber + 1;
-  if (nextPage < 5 ) {
+  if (nextPage < 5) {
     pageNum.innerHTML = nextPage;
     displayEpisode.innerHTML = '';
     getData(API)
