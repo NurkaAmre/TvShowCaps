@@ -1,4 +1,5 @@
 import './style.css';
+import { countDisplayedShows, countShows } from './modules/counterItem';
 
 const API = 'https://api.tvmaze.com/shows/1/episodes';
 const likesAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OpXkQhwbfD4wnLSWy6wV/likes';
@@ -7,7 +8,9 @@ const displayEpisode = document.querySelector('.episode');
 const previous = document.querySelector('.previous');
 const next = document.querySelector('.next');
 const pageNum = document.querySelector('.page-numbers');
-// const body = document.querySelector('body');
+const showsHeader = document.querySelector('.shows-header');
+const body = document.querySelector('body');
+
 
 let showsArray = [];
 
@@ -36,6 +39,7 @@ const likeShow = async (id, likesNumber, likesBtn) => {
 function createShowCard(episode) {
   const div = document.createElement('div');
   div.classList.add('card');
+  div.setAttribute('id', episode.id);
   div.innerHTML = `
   <h2 class="card-title">${episode.name}</h2>
   <img class="card-img-top img" src=${episode.image.medium} alt="">
@@ -62,14 +66,17 @@ function createShowCard(episode) {
   return div;
 }
 
-const displayShows = (shows, pageNumber) => {
-  shows.slice(pageNumber * 10 - 10, pageNumber * 9).forEach((show) => {
-    const div = createShowCard(show);
-    displayEpisode.append(div);
-  });
-};
+  const displayShows = (shows, pageNumber, heading) => {
+    shows.slice(pageNumber * 10 - 10, pageNumber * 10).forEach((show) => {
+      const div = createShowCard(show);
+      displayEpisode.append(div);
+    });
+    const displayedShowsObj = countDisplayedShows(displayEpisode);
+    const showsCount = countShows(showsArray);
+    heading.innerHTML = `Episodes: (${displayedShowsObj.firstId}, ${displayedShowsObj.lastId}) of ${showsCount}`;
+  };
 
-function loadNext(pageNumber, shows) {
+function loadNext(pageNumber, shows, showsHeader) {
   const nextPage = pageNumber + 1;
   if (nextPage < 5) {
     pageNum.innerHTML = nextPage;
@@ -77,43 +84,43 @@ function loadNext(pageNumber, shows) {
     getData(API)
       .then((response) => response.json())
       .then((json) => displayShows(json, pageNumber + 1));
-    displayShows(shows, nextPage);
+    displayShows(shows, nextPage, showsHeader);
   }
 }
 
-function loadPrevious(pageNumber, shows) {
+function loadPrevious(pageNumber, shows, showsHeader) {
   const previousPage = pageNumber - 1;
   if (previousPage > 0) {
-    pageNum.innerHTML = previous;
+    pageNum.innerHTML = previousPage;
     displayEpisode.innerHTML = '';
     getData(API)
       .then((response) => response.json())
       .then((json) => displayShows(json, pageNumber - 1));
-    displayShows(shows, previousPage);
+    displayShows(shows, previousPage, showsHeader);
   }
 }
 
 previous.addEventListener('click', () => {
-  loadPrevious(parseInt(pageNum.innerHTML, 10), showsArray);
+  loadPrevious(parseInt(pageNum.innerHTML, 10), showsArray, showsHeader, pageNum, displayEpisode, body, likesAPI);
 });
 
 next.addEventListener('click', () => {
-  loadNext(parseInt(pageNum.innerHTML, 10), showsArray);
+  loadNext(parseInt(pageNum.innerHTML, 10), showsArray, showsHeader, pageNum, displayEpisode, body, likesAPI);
 });
 
-getData(API)
-  .then((response) => response.json())
-  .then((json) => displayShows(json, 1));
-getData(API)
+
+  getData(API)
   .then((response1) => response1.json())
   .then((shows) => {
     showsArray = shows;
     getData(likesAPI)
       .then((response) => response.json())
       .then((likes) => {
-        likes.forEach((item, i) => {
-          showsArray[i].likes = item.likes;
+        likes.forEach((like) => {
+          showsArray.forEach((show) => {
+            if (show.id === like.item_id) show.likes = like.likes;
+          });
         });
-        displayShows(showsArray, 1);
+        displayShows(showsArray, 1, showsHeader, pageNum, displayEpisode, body, likesAPI);
       });
   });
