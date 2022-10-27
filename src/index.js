@@ -1,8 +1,7 @@
 import './style.css';
 
-
-// const API = 'https://api.tvmaze.com/shows/1/episodes';
-// const likesAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OpXkQhwbfD4wnLSWy6wV/likes';
+const API = 'https://api.tvmaze.com/shows/1/episodes';
+const likesAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OpXkQhwbfD4wnLSWy6wV/likes';
 
 const displayEpisode = document.querySelector('.episode');
 const previous = document.querySelector('.previous');
@@ -32,11 +31,11 @@ function displayCards(episode) {
                 </div>
                 </div>`;
 
-                const likesNumber = div.querySelector('.likeCount');
-                if ('like' in episode) {
-                  likesNumber.innerHTML = episode.like;
+  const likesNumber = div.querySelector('.likeCount');
+  if ('like' in episode) {
+    likesNumber.innerHTML = episode.like;
   }
-     return div;
+  return div;
 }
 
 const displayShows = (shows, pageNumber) => {
@@ -47,7 +46,7 @@ const displayShows = (shows, pageNumber) => {
 };
 
 function loadNext(pageNumber, shows) {
-    const nextPage = pageNumber + 1;
+  const nextPage = pageNumber + 1;
   if (pageNumber + 1 < 6) {
     pageNum.innerHTML = nextPage;
     displayEpisode.innerHTML = '';
@@ -56,7 +55,7 @@ function loadNext(pageNumber, shows) {
 }
 
 function loadPrevious(pageNumber, shows) {
-    const previousPage = pageNumber - 1;
+  const previousPage = pageNumber - 1;
   if (pageNumber > 0) {
     pageNum.innerHTML = previous;
     displayEpisode.innerHTML = '';
@@ -72,23 +71,19 @@ next.addEventListener('click', () => {
   loadNext(parseInt(pageNum.innerHTML, 10), showArray);
 });
 
-
-
-  getData(API)
+getData(API)
   .then((response1) => response1.json())
   .then((shows) => {
     showArray = shows;
     getData(likesAPI)
       .then((response2) => response2.json())
       .then((like) => {
-        console.log(like)
         like.forEach((item, i) => {
           showArray[i].like = item.like;
         });
         displayShows(showArray, 1);
       });
   });
-
 
 //   const createApp = async () => {
 //     const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {
