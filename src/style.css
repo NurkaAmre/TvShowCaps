@@ -59,6 +59,7 @@ h2 {
 .likes {
   display: flex;
   justify-content: center;
+  border: solid rgb(31, 163, 102);
 }
 
 .likeCount {
@@ -109,7 +110,19 @@ button:active:hover {
 }
 
 footer {
-  background-color: rgb(23, 21, 21);
+  background-color: rgb(163, 100, 100);
+  border: 3px solid pink;
+  height: 300px;
+  margin-top: 10%;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 5%;
 }
 
 .main-section {
@@ -159,6 +172,7 @@ footer {
 .card {
   margin-top: 5%;
   width: 25%;
+  height: 20%;
   background-color: rgba(51, 70, 61, 0.574);
   padding-bottom: 10%;
   border-radius: 10px;
@@ -198,4 +212,95 @@ footer {
 
 .btn-like {
   margin-right: 50px;
+}
+
+/* Media-Query */
+@media screen and (max-width: 768px) {
+  ul {
+    gap: 10px;
+  }
+
+  .logo {
+    padding-right: 20%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: #fff;
+
+    /* padding-bottom: 30%; */
+  }
+
+  .container {
+    background-image: url(./assets/20th-Century-Boy-and-Girl1-e1510135554891.jpg);
+    background-repeat: no-repeat;
+  }
+
+  button {
+    margin-left: 5%;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 60%;
+  }
+
+  .episode {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  div .card {
+    width: 90%;
+    height: 700px;
+    margin-top: 20px;
+  }
+
+  /* .card-img-top {
+    margin-top: 5%;
+    width: 100%;
+    height: 20%;
+  } */
+
+  .show-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .btn-comment {
+    margin-top: 5%;
+    margin-right: 20px;
+  }
+
+  .btn-like {
+    margin-left: 20px;
+  }
+
+  .likeCount {
+    font-size: 20px;
+  }
+
+  .mini {
+    padding-left: 20px;
+    margin-top: 37%;
+  }
+
+  .previous {
+    position: absolute;
+    right: 55%;
+  }
+
+  .next {
+    position: absolute;
+    left: 50%;
+  }
+
+  .page-numbers {
+    margin-top: 0;
+  }
 }
