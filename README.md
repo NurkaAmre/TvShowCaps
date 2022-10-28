@@ -1,56 +1,52 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Tv Maze Episodes
 
-# Project Name
-
-> Description the project.
+>This project about movie "Under the Dome" on page displayed film episodes, user can like movies see information about episodes and read comments.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML5
+- CSS3
+- API
+- Unit Testing
+- JavaScript
+- Webpack
 
-## Live Demo (if available)
+## Live Demo 
+[Experience a live Demo]
 
-[Live Demo Link](https://livedemo.com)
-
+## A brief description on the project
+[Video](https://www.loom.com/share/e6604d3cda3a4533ab1aab99089ce734)
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-### Setup
+- Clone this repo using this URL (link) or download it as a ZIP format from the green button above under the text Code.
 
 ### Install
+```shell
+npm install
+```
 
-### Usage
-
-### Run tests
+### Run tests & run app
+```shell
+npm run test
+npm start
+```
 
 ### Deployment
-
-
+```shell
+npm run build
+```
 
 ## Authors
 
-👤 **Author1**
+👤 **Adel Guitoun**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@aNurkaAmre](https://github.com/NurkaAmre)
+- Twitter: [@NurkaAmre](https://twitter.com/AmreNurgul)
+- LinkedIn: [adelguitoun](https://www.linkedin.com/in/amre-nurgul/)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
@@ -64,12 +60,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- [Involvement-API](https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/) from microverse.
+- [TV - Maze - Episodes](https://api.tvmaze.com/seasons/1/episodes)
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.

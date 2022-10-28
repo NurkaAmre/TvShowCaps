@@ -1,4 +1,4 @@
-import { likeShow } from './addLikes.js';
+import likeShow from './addLikes.js';
 
 export default function createShowCard(episode) {
   const div = document.createElement('div');

@@ -54,11 +54,13 @@ function loadPrevious(pageNumber, shows, showsHeader) {
 }
 
 previous.addEventListener('click', () => {
-  loadPrevious(parseInt(pageNum.innerHTML, 10), showsArray, showsHeader, pageNum, displayEpisode, body, likesAPI);
+  loadPrevious(parseInt(pageNum.innerHTML, 10), showsArray, showsHeader, pageNum,
+    displayEpisode, body, likesAPI);
 });
 
 next.addEventListener('click', () => {
-  loadNext(parseInt(pageNum.innerHTML, 10), showsArray, showsHeader, pageNum, displayEpisode, body, likesAPI);
+  loadNext(parseInt(pageNum.innerHTML, 10), showsArray, showsHeader, pageNum,
+    displayEpisode, body, likesAPI);
 });
 
 getData(API)

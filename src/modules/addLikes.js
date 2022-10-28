@@ -1,6 +1,6 @@
 const likesAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OpXkQhwbfD4wnLSWy6wV/likes';
 
-export const likeShow = async (id, likesNumber, likesBtn) => {
+const likeShow = async (id, likesNumber, likesBtn) => {
   await fetch(likesAPI, {
     method: 'POST',
     body: JSON.stringify({
@@ -16,3 +16,5 @@ export const likeShow = async (id, likesNumber, likesBtn) => {
     i.classList.add('fa-solid');
   });
 };
+
+export default likeShow;
