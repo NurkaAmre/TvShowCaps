@@ -10,11 +10,9 @@ export default function createShowCard(episode) {
     <div class="card-body">       
        <p class="card-text">${episode.summary}</p>
        <button type="button" class="btn btn-link btn-comment">Comments</i></button>
-       <div class="likes">
        <button type="button"
         class="btn btn-link like-count"><i class="fa-regular fa-heart like-icon"></i></button>
        <span class="likeCount">0</span>
-       </div>
        </div>
     `;
   const likesNumber = div.querySelector('.likeCount');
