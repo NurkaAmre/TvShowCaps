@@ -44,7 +44,7 @@ npm run build
 👤 **Adel Guitoun**
 
 - GitHub: [@aNurkaAmre](https://github.com/NurkaAmre)
-- Twitter: [@GuitounAdel](https://twitter.com/AmreNurgul)
+- Twitter: [@NurkaAmre](https://twitter.com/AmreNurgul)
 - LinkedIn: [adelguitoun](https://www.linkedin.com/in/amre-nurgul/)
 
 
