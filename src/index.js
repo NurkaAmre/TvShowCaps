@@ -1,5 +1,5 @@
 import './style.css';
-import { countDisplayedShows, countShows } from './modules/counterItem.js';
+import { countShows } from './modules/counterItem.js';
 import createShowCard from './modules/display.js';
 
 const API = 'https://api.tvmaze.com/shows/1/episodes';
@@ -24,9 +24,9 @@ const displayShows = (shows, pageNumber, heading) => {
     const div = createShowCard(show);
     displayEpisode.append(div);
   });
-  const displayedShowsObj = countDisplayedShows(displayEpisode);
+
   const showsCount = countShows(showsArray);
-  heading.innerHTML = `Episodes: (${displayedShowsObj.firstId}, ${displayedShowsObj.lastId}) of ${showsCount}`;
+  heading.innerHTML = `Episodes: ${showsCount}`;
 };
 
 function loadNext(pageNumber, shows, showsHeader) {
