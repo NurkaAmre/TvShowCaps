@@ -41,7 +41,7 @@ npm run build
 
 ## Authors
 
-👤 **Adel Guitoun**
+👤 **Nurgul Kereikhan**
 
 - GitHub: [@aNurkaAmre](https://github.com/NurkaAmre)
 - Twitter: [@NurkaAmre](https://twitter.com/AmreNurgul)
