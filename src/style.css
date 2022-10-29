@@ -1,0 +1,299 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(23, 21, 21);
+  font-family: 'Fuzzy Bubbles', cursive;
+  color: white;
+}
+
+ul {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.logo {
+  font-size: x-large;
+  color: yellowgreen;
+  padding-right: 60%;
+}
+
+.ul1 {
+  margin-top: 10px;
+}
+
+ul li {
+  list-style: none;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 2.5rem;
+}
+
+.hover:hover {
+  color: rgb(13, 147, 208);
+}
+
+.container {
+  background-image: url(./assets/under-the-dom.jpg);
+  background-blend-mode: overlay;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  gap: 20px;
+  padding-bottom: 10%;
+}
+
+.likes {
+  display: flex;
+  justify-content: center;
+  border: solid rgb(31, 163, 102);
+}
+
+.likeCount {
+  color: #fff;
+  font-size: 40px;
+  padding-right: 20%;
+}
+
+.like-count {
+  margin-right: 5%;
+}
+
+.mini {
+  margin-top: 15%;
+  padding-left: 60%;
+}
+
+h1 {
+  padding-top: 40%;
+  font-size: 3rem;
+  color: rgb(8, 17, 27);
+  margin-top: 0;
+  font-weight: 800;
+}
+
+h3 {
+  margin-top: 5%;
+  color: rgb(8, 17, 27);
+  padding-right: 20%;
+  font-size: 1.5rem;
+}
+
+button {
+  background-color: rgb(34, 150, 158);
+  margin-left: 20%;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  margin-top: 3%;
+  padding: 5px 5px 5px 5px;
+  border-radius: 10%;
+}
+
+button:active:hover {
+  transform: scale(0.98);
+  background-color: pink;
+  color: rgb(7, 175, 212);
+}
+
+footer {
+  background-color: rgb(15, 31, 21);
+  height: 150px;
+  margin-top: 10%;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.nurka {
+  padding-top: 4%;
+  padding-left: 40%;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.nurka a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.main-section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(22, 21, 21);
+}
+
+.show-controls {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-bottom: 10%;
+}
+
+.previous {
+  position: absolute;
+  right: 52%;
+}
+
+.next {
+  position: absolute;
+  left: 31%;
+}
+
+.page-numbers {
+  position: absolute;
+  left: 49%;
+  margin-top: 3%;
+  font-size: 2rem;
+}
+
+.episode {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 10%;
+  text-align: center;
+}
+
+.none {
+  list-style: none;
+}
+
+.card {
+  margin-top: 5%;
+  width: 25%;
+  background-color: rgba(51, 70, 61, 0.574);
+  padding-bottom: 10%;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.card:hover {
+  border: 4px solid rgb(7, 96, 80);
+}
+
+.card-title {
+  color: rgb(22, 142, 142);
+  font-size: 2rem;
+  padding-top: 5%;
+}
+
+.card-img-top {
+  margin-top: 5%;
+  width: 100%;
+  height: 50%;
+}
+
+.card-text {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 20px;
+  margin-bottom: 10%;
+}
+
+.btn-comment {
+  margin-right: 55px;
+  margin-top: 5%;
+}
+
+.btn-like {
+  margin-right: 50px;
+}
+
+/* Media-Query */
+@media screen and (max-width: 768px) {
+  ul {
+    gap: 10px;
+  }
+
+  .logo {
+    padding-right: 20%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .container {
+    background-image: url(./assets/20th-Century-Boy-and-Girl1-e1510135554891.jpg);
+    background-repeat: no-repeat;
+  }
+
+  button {
+    margin-left: 5%;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 60%;
+  }
+
+  .episode {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  div .card {
+    width: 90%;
+    height: 700px;
+    margin-top: 20px;
+  }
+
+  .show-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .btn-comment {
+    margin-top: 5%;
+    margin-right: 20px;
+  }
+
+  .btn-like {
+    margin-left: 20px;
+  }
+
+  .likeCount {
+    font-size: 20px;
+  }
+
+  .mini {
+    padding-left: 20px;
+    margin-top: 37%;
+  }
+
+  .previous {
+    position: absolute;
+    right: 55%;
+  }
+
+  .next {
+    position: absolute;
+    left: 50%;
+  }
+
+  .page-numbers {
+    margin-top: 0;
+  }
+
+  .footer {
+    height: 400px;
+  }
+}
