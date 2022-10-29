@@ -1,6 +1,6 @@
 const likesAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OpXkQhwbfD4wnLSWy6wV/likes';
 
-const likeShow = async (id, likesNumber, likesBtn) => {
+const likeShow = async (id, likesNumber) => {
   await fetch(likesAPI, {
     method: 'POST',
     body: JSON.stringify({
@@ -11,9 +11,6 @@ const likeShow = async (id, likesNumber, likesBtn) => {
     },
   }).then(() => {
     likesNumber.innerHTML = parseInt(likesNumber.innerHTML, 10) + 1;
-    const i = likesBtn.querySelector('i');
-    i.classList.remove('fa-regular');
-    i.classList.add('fa-solid');
   });
 };
 

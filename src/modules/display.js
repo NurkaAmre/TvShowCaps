@@ -1,6 +1,6 @@
 import likeShow from './addLikes.js';
 
-export default function createShowCard(episode) {
+const createShowCard = (episode) => {
   const div = document.createElement('div');
   div.classList.add('card');
   div.setAttribute('id', episode.id);
@@ -26,4 +26,6 @@ export default function createShowCard(episode) {
   });
 
   return div;
-}
+};
+
+export default createShowCard;

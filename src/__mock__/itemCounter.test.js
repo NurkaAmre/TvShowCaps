@@ -23,3 +23,7 @@ test('properly counts total item on the page', () => {
 
   expect(movieCounter).toEqual(10);
 });
+
+test('Counter function should return 0', () => {
+  expect(countShows([])).toBe(0);
+});
