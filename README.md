@@ -16,7 +16,7 @@
 [Experience a live Demo]
 
 ## A brief description on the project
-[Video](https://www.loom.com/share/e6604d3cda3a4533ab1aab99089ce734)
+[Video]
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
@@ -45,7 +45,7 @@ npm run build
 
 - GitHub: [@aNurkaAmre](https://github.com/NurkaAmre)
 - Twitter: [@NurkaAmre](https://twitter.com/AmreNurgul)
-- LinkedIn: [adelguitoun](https://www.linkedin.com/in/amre-nurgul/)
+- LinkedIn: [@NurgulKereikhan](https://www.linkedin.com/in/amre-nurgul/)
 
 
 ## 🤝 Contributing
